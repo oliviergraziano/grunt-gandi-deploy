@@ -1,0 +1,39 @@
+{
+  "name": "grunt-gandi-deploy",
+  "description": "Help deploying apps on Gandi Simple Hosting using Git.",
+  "version": "0.1.0",
+  "homepage": "https://github.com/oliviergraziano/grunt-gandi-deploy",
+  "author": {
+    "name": "Olivier GRAZIANO",
+    "email": "hey@graziano.io",
+    "url": "http://graziano.io"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/oliviergraziano/grunt-gandi-deploy.git"
+  },
+  "bugs": {
+    "url": "https://github.com/oliviergraziano/grunt-gandi-deploy/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/oliviergraziano/grunt-gandi-deploy/blob/master/LICENSE"
+    }
+  ],
+  "engines": {
+    "node": ">= 0.8.0"
+  },
+  "scripts": {
+    "test": "grunt test"
+  },
+  "devDependencies": {
+    "grunt-contrib-jshint": "^0.9.2",
+    "grunt-contrib-clean": "^0.5.0",
+    "grunt-contrib-nodeunit": "^0.3.3",
+    "grunt": "~0.4.5"
+  },
+  "keywords": [
+    "gruntplugin"
+  ]
+}
