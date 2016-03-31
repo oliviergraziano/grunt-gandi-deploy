@@ -32,10 +32,11 @@ module.exports = function(grunt) {
     gandi_deploy: {
       default_options: {
         options: {
+          login: 'login',
+          ssh_key_path: '/home/user/.ssh/id_rsa',
+          tag: 'v0.1.0'
         },
-        files: {
-          'tmp/default_options': ['test/fixtures/testing', 'test/fixtures/123']
-        }
+        src: 'path/to/deployDir'
       },
       custom_options: {
         options: {
@@ -43,7 +44,7 @@ module.exports = function(grunt) {
           punctuation: ' !!!'
         },
         files: {
-          'tmp/custom_options': ['test/fixtures/testing', 'test/fixtures/123']
+          'tmp/custom_optionsg': ['test/fixtures/testing', 'test/fixtures/123']
         }
       }
     },
