@@ -25,11 +25,12 @@ In your project's Gruntfile, add a section named `gandi_deploy` to the data obje
 ```js
 grunt.initConfig({
   gandi_deploy: {
-    options: {
-      // Task-specific options go here.
-    },
     your_target: {
-      // Target-specific file lists and/or options go here.
+        options: {
+          login: 'your_gandi_login',
+          ssh_key_path: '/path/to/rsa/private/key',
+        },
+        src: 'path/to/deploy/directory'
     },
   },
 });
@@ -37,53 +38,81 @@ grunt.initConfig({
 
 ### Options
 
-#### options.separator
+#### options.login
 Type: `String`
-Default value: `',  '`
 
-A string value that is used to do something with whatever.
+Your Simple Hosting instance admin login
 
-#### options.punctuation
+#### options.ssh_key_path
 Type: `String`
-Default value: `'.'`
 
-A string value that is used to do something else with whatever else.
+Path to your SSH private key. This method is strongly recommended.
 
-### Usage Examples
+#### options.password
+Type: `String`
 
-#### Default Options
-In this example, the default options are used to do something with whatever. So if the `testing` file has the content `Testing` and the `123` file had the content `1 2 3`, the generated result would be `Testing, 1 2 3.`
+Password for your instance. This option is not recommended. Use SSH Key instead.
 
-```js
-grunt.initConfig({
-  gandi_deploy: {
-    options: {},
-    files: {
-      'dest/default_options': ['src/testing', 'src/123'],
-    },
-  },
-});
-```
+#### options.vhost
+Type: `String`
+Default value: `'default'`
 
-#### Custom Options
-In this example, custom options are used to do something else with whatever else. So if the `testing` file has the content `Testing` and the `123` file had the content `1 2 3`, the generated result in this case would be `Testing: 1 2 3 !!!`
+Vhost to deploy to. (Only default on Node.js and Python instances)
 
-```js
-grunt.initConfig({
-  gandi_deploy: {
-    options: {
-      separator: ': ',
-      punctuation: ' !!!',
-    },
-    files: {
-      'dest/default_options': ['src/testing', 'src/123'],
-    },
-  },
-});
-```
+#### options.datacenter_location
+Type: `String`
+Default value: `'dc0'`
+
+Your SimpleHosting instance datacenter location
+
+#### options.branch
+Type: `String`
+Default value: `'master'`
+
+Branch to deploy to.
+
+#### options.message
+Type: `String`
+Default value: `'autocommit'`
+
+Commit message
+
+#### options.tag
+Type: `String`
+Default value: `false`
+
+Tag for the release. The release is not tagged if value is `false`
+
+#### options.tag_message
+Type: `String`
+Default value: `'autocommit'`
+
+Message for the tag. Ignored if options.tag is `false`
+
+#### options.git_clean
+Type: `String`
+Default value: `false`
+
+Whether to execute à `git clean` operation on the vhost directory see [Gandi Documentation](https://wiki.gandi.net/en/simple/git) for details
+
+#### options.remote
+Type: `String`
+Default value: `'origin'`
+
+Git remote name.
+
+#### options.tmp_dir
+Type: `String`
+Default value: `'tmp'`
+
+Plugin's working directory name. `'tmp'` is the default value but can be changed if needed.
+
+
+## Notes
+There are no unit tests for this plugin yet. Use it carefully.
+
+This plugin has been inspired by (grunt-git-deploy)[https://github.com/iclanzan/grunt-git-deploy] and uses some of its code.
 
 ## Contributing
-In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com/).
+Every contribution is welcome !
 
-## Release History
-_(Nothing yet)_
