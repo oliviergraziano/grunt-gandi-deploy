@@ -57,10 +57,10 @@ Password for your instance. This option is not recommended. Use SSH Key instead.
 Type: `String`
 Default value: `'default'`
 
-Vhost to deploy to. (Only default on Node.js and Python instances)
+Vhost to deploy to. (Only `'default' on Node.js, Python or Ruby instances)
 
 #### options.datacenter_location
-Type: `String`
+Type: `String``
 Default value: `'dc0'`
 
 Your SimpleHosting instance datacenter location
@@ -111,7 +111,11 @@ Plugin's working directory name. `'tmp'` is the default value but can be changed
 ## Notes
 There are no unit tests for this plugin yet. Use it carefully.
 
-This plugin has been inspired by (grunt-git-deploy)[https://github.com/iclanzan/grunt-git-deploy] and uses some of its code.
+For more informations about Simple Hosting Git access, see [Gandi Documentation](https://wiki.gandi.net/en/simple/git)
+
+This plugin is not written or supported by [Gandi](https://www.gandi.net/).
+
+This plugin has been inspired by [grunt-git-deploy](https://github.com/iclanzan/grunt-git-deploy) and uses some of its code.
 
 ## Contributing
 Every contribution is welcome !
