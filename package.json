@@ -1,7 +1,7 @@
 {
   "name": "grunt-gandi-deploy",
   "description": "Help deploying apps on Gandi Simple Hosting using Git.",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "homepage": "https://github.com/oliviergraziano/grunt-gandi-deploy",
   "author": {
     "name": "Olivier GRAZIANO",
